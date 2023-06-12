@@ -9,8 +9,8 @@ def __init__(self, in_ch, num_filter, bias=False):
 
     self.bn1 = nn.BatchNorm2d(int(1.5 * num_filter))
     self.bn2 = nn.BatchNorm2d(num_filter)
-    self.relu = nn.ReLU(inplace=False)
-
+   
+    self.tanh = nn.Tanh(inplace=False)
     self.conv4 = nn.Conv2d(in_channels=int(1.5 * num_filter), out_channels=num_filter,
                            kernel_size=7, stride=1, padding=3, bias=bias)
     self.conv5 = nn.Conv2d(in_channels=in_ch, out_channels=num_filter,
